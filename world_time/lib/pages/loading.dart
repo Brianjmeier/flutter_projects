@@ -26,7 +26,6 @@ class _LoadingState extends State<Loading> {
     // get weather data.
     WorldWeather worldWeather = WorldWeather();
     Weather weatherData = await worldWeather.getWeatherData(location);
-    print('done!');
 
     // choose icon accordingly.
     int code = weatherData.weatherConditionCode;
