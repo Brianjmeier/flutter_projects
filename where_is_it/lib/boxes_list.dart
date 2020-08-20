@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:where_is_it/box.dart';
 import 'package:reorderables/reorderables.dart';
+import 'package:where_is_it/box.dart';
 
 class Boxes extends StatefulWidget {
   @override
@@ -13,7 +13,7 @@ class _BoxesState extends State<Boxes> {
   @override
   void initState() {
     super.initState();
-    _boxes = List<Widget>.generate(50, (index) => Box(name: 'BOX NAME',));
+    _boxes = List<Widget>.generate(1, (index) => Box2());
   }
 
   @override
@@ -24,7 +24,9 @@ class _BoxesState extends State<Boxes> {
         _boxes.insert(newIndex, tmp);
       });
     }
-    ScrollController _scrollController = PrimaryScrollController.of(context) ?? ScrollController();
+
+    ScrollController _scrollController =
+        PrimaryScrollController.of(context) ?? ScrollController();
 
     return ReorderableWrap(
       padding: EdgeInsets.all(20.0),
