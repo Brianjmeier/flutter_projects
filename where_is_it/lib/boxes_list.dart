@@ -13,7 +13,11 @@ class _BoxesState extends State<Boxes> {
   @override
   void initState() {
     super.initState();
-    _boxes = List<Widget>.generate(1, (index) => Box2());
+    _boxes = List<Widget>.generate(
+        10,
+        (index) => Box(
+              name: 'Box N°$index',
+            ));
   }
 
   @override
@@ -28,12 +32,13 @@ class _BoxesState extends State<Boxes> {
     ScrollController _scrollController =
         PrimaryScrollController.of(context) ?? ScrollController();
 
-    return ReorderableWrap(
-      padding: EdgeInsets.all(20.0),
-      controller: _scrollController,
-      scrollDirection: Axis.vertical,
-      children: _boxes,
-      onReorder: _onReorder,
+    return Center(
+      child: ReorderableWrap(
+        controller: _scrollController,
+        scrollDirection: Axis.vertical,
+        children: _boxes,
+        onReorder: _onReorder,
+      ),
     );
   }
 }

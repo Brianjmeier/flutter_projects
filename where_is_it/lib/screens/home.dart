@@ -10,7 +10,9 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.brown[700],
       appBar: AppBar(
+        backgroundColor: Colors.brown[800],
         title: Text(
           'Where Is It?',
           style: TextStyle(fontSize: 23.5, fontWeight: FontWeight.w400),
@@ -28,7 +30,8 @@ class _HomeState extends State<Home> {
             onPressed: () {},
             icon: Icon(Icons.add, color: Colors.white),
           ),
-        ],),
+        ],
+      ),
       body: Boxes(),
     );
   }
